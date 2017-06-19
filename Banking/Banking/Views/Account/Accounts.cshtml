@@ -1,0 +1,26 @@
+@model AccountViewModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Accounts</h1>
+
+<table class="table">
+    <tr>
+        <th>Account Number</th>
+        <th>Account Name</th>
+        <th>Balance</th>
+        <th></th>
+    </tr>
+    @foreach (var account in Model.Accounts)
+    {
+        <tr>
+            <td>@account.AccountNumber</td>
+            <td>@account.AccountName</td>
+            <td>@account.Balance</td>
+            <td>
+                <a class="btn btn-info" asp-controller="Transaction" asp-action="Transactions" asp-route-accountNumber="@account.AccountNumber" asp-route-Id ="@account.Id">View </a>
+            </td>
+        </tr>
+    }
+</table>

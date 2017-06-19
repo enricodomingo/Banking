@@ -1,0 +1,29 @@
+@model TransactionViewModel
+@{
+    ViewData["Title"] = "Transactions";
+}
+
+<h1>Transactions</h1>
+    <div class="form-group">
+    <a class="btn" asp-controller="Account" asp-action="Deposit" asp-route-id="@Model.Id">Deposit</a>
+    <a class="btn" asp-controller="Account" asp-action="Withdraw" asp-route-id="@Model.Id">Withdraw</a>
+    <a class="btn" asp-controller="Account" asp-action="Transfer" asp-route-id="@Model.Id">Transfer</a>
+    </div>
+    <table class="table">
+        <tr>
+            <th>Account Number</th>
+            <th>Amount</th>
+            <th>Transaction Type</th>
+            <th>Date Created</th>
+        </tr>
+        @foreach (var transaction in @Model.Transactions)
+        {
+            <tr>
+                <td>@transaction.AccountNumber</td>
+                <td>@transaction.Amount</td>
+                <td>@transaction.TransactionType</td>
+                <td>@transaction.CreatedDate</td>
+            </tr>
+        }
+    </table>
+
