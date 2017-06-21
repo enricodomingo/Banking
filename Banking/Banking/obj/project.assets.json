@@ -10366,10 +10366,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ENRICO DOMINGO\\Documents\\Banking\\Banking\\Banking.csproj",
+      "projectUniqueName": "C:\\Users\\ENRICO DOMINGO\\Documents\\GitHub\\Banking\\Banking\\Banking\\Banking.csproj",
       "projectName": "Banking",
-      "projectPath": "C:\\Users\\ENRICO DOMINGO\\Documents\\Banking\\Banking\\Banking.csproj",
-      "outputPath": "C:\\Users\\ENRICO DOMINGO\\Documents\\Banking\\Banking\\obj\\",
+      "projectPath": "C:\\Users\\ENRICO DOMINGO\\Documents\\GitHub\\Banking\\Banking\\Banking\\Banking.csproj",
+      "outputPath": "C:\\Users\\ENRICO DOMINGO\\Documents\\GitHub\\Banking\\Banking\\Banking\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

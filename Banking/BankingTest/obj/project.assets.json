@@ -11476,10 +11476,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ENRICO DOMINGO\\Documents\\Banking\\BankingTest\\BankingTest.csproj",
+      "projectUniqueName": "C:\\Users\\ENRICO DOMINGO\\Documents\\GitHub\\Banking\\Banking\\BankingTest\\BankingTest.csproj",
       "projectName": "BankingTest",
-      "projectPath": "C:\\Users\\ENRICO DOMINGO\\Documents\\Banking\\BankingTest\\BankingTest.csproj",
-      "outputPath": "C:\\Users\\ENRICO DOMINGO\\Documents\\Banking\\BankingTest\\obj\\",
+      "projectPath": "C:\\Users\\ENRICO DOMINGO\\Documents\\GitHub\\Banking\\Banking\\BankingTest\\BankingTest.csproj",
+      "outputPath": "C:\\Users\\ENRICO DOMINGO\\Documents\\GitHub\\Banking\\Banking\\BankingTest\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -11487,8 +11487,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "C:\\Users\\ENRICO DOMINGO\\Documents\\Banking\\Banking\\Banking.csproj": {
-              "projectPath": "C:\\Users\\ENRICO DOMINGO\\Documents\\Banking\\Banking\\Banking.csproj"
+            "C:\\Users\\ENRICO DOMINGO\\Documents\\GitHub\\Banking\\Banking\\Banking\\Banking.csproj": {
+              "projectPath": "C:\\Users\\ENRICO DOMINGO\\Documents\\GitHub\\Banking\\Banking\\Banking\\Banking.csproj"
             }
           }
         }

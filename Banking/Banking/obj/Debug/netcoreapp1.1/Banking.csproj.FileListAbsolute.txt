@@ -24,3 +24,12 @@ C:\Users\ENRICO DOMINGO\Documents\Banking\Banking\obj\Debug\netcoreapp1.1\Bankin
 C:\Users\ENRICO DOMINGO\Documents\Banking\Banking\obj\Debug\netcoreapp1.1\Banking.AssemblyInfo.cs
 C:\Users\ENRICO DOMINGO\Documents\Banking\Banking\obj\Debug\netcoreapp1.1\Banking.dll
 C:\Users\ENRICO DOMINGO\Documents\Banking\Banking\obj\Debug\netcoreapp1.1\Banking.pdb
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\Banking\bin\Debug\netcoreapp1.1\Banking.deps.json
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\Banking\bin\Debug\netcoreapp1.1\Banking.runtimeconfig.json
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\Banking\bin\Debug\netcoreapp1.1\Banking.runtimeconfig.dev.json
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\Banking\bin\Debug\netcoreapp1.1\Banking.dll
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\Banking\bin\Debug\netcoreapp1.1\Banking.pdb
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\Banking\obj\Debug\netcoreapp1.1\Banking.csprojResolveAssemblyReference.cache
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\Banking\obj\Debug\netcoreapp1.1\Banking.AssemblyInfo.cs
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\Banking\obj\Debug\netcoreapp1.1\Banking.dll
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\Banking\obj\Debug\netcoreapp1.1\Banking.pdb

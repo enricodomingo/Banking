@@ -26,3 +26,17 @@ C:\Users\ENRICO DOMINGO\Downloads\Banking\BankingTest\bin\Debug\netcoreapp1.1\Ba
 C:\Users\ENRICO DOMINGO\Downloads\Banking\BankingTest\obj\Debug\netcoreapp1.1\BankingTest.csprojResolveAssemblyReference.cache
 C:\Users\ENRICO DOMINGO\Downloads\Banking\BankingTest\obj\Debug\netcoreapp1.1\BankingTest.dll
 C:\Users\ENRICO DOMINGO\Downloads\Banking\BankingTest\obj\Debug\netcoreapp1.1\BankingTest.pdb
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\BankingTest\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\BankingTest\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\BankingTest\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\BankingTest\bin\Debug\netcoreapp1.1\BankingTest.deps.json
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\BankingTest\bin\Debug\netcoreapp1.1\BankingTest.runtimeconfig.json
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\BankingTest\bin\Debug\netcoreapp1.1\BankingTest.runtimeconfig.dev.json
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\BankingTest\bin\Debug\netcoreapp1.1\BankingTest.dll
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\BankingTest\bin\Debug\netcoreapp1.1\BankingTest.pdb
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\BankingTest\bin\Debug\netcoreapp1.1\Banking.dll
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\BankingTest\bin\Debug\netcoreapp1.1\Banking.pdb
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\BankingTest\obj\Debug\netcoreapp1.1\BankingTest.csprojResolveAssemblyReference.cache
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\BankingTest\obj\Debug\netcoreapp1.1\BankingTest.AssemblyInfo.cs
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\BankingTest\obj\Debug\netcoreapp1.1\BankingTest.dll
+C:\Users\ENRICO DOMINGO\Documents\GitHub\Banking\Banking\BankingTest\obj\Debug\netcoreapp1.1\BankingTest.pdb

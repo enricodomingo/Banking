@@ -34,6 +34,8 @@ namespace BankingTest
                 AccountNumber = "123",
                 Password = "sample"
             };
+
+            mock.Setup(s => s.GetAccountById(1)).Returns(_account);
             IActionResult result = testController.Deposit(_account, 1, 100, "sample");
             Assert.IsInstanceOfType(result, typeof(RedirectToActionResult));
         }
@@ -43,9 +45,16 @@ namespace BankingTest
         {
             Mock<IAccount> mock = new Mock<IAccount>();
             var testController = new AccountController(mock.Object);
-
-            IActionResult result = testController.Withdraw(1,100,"sample");
-            Assert.IsInstanceOfType(result, typeof(RedirectToActionResult));
+            Account _account = new Account()
+            {
+                AccountName = "sample",
+                Id = 1,
+                AccountNumber = "123",
+                Password = "sample"
+            };
+            mock.Setup(s => s.GetAccountById(1)).Returns(_account);
+            IActionResult result = testController.Withdraw(1, 100, "sample");
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
 
         [TestMethod]
@@ -54,9 +63,16 @@ namespace BankingTest
             Mock<IAccount> mock = new Mock<IAccount>();
             mock.As<IAccount>();
             var testController = new AccountController(mock.Object);
-
-            IActionResult result = testController.Transfer(1,"123",100,"sample");
-            Assert.IsInstanceOfType(result, typeof(RedirectToActionResult));
+            Account _account = new Account()
+            {
+                AccountName = "sample",
+                Id = 1,
+                AccountNumber = "123",
+                Password = "sample"
+            };
+            mock.Setup(s => s.GetAccountById(1)).Returns(_account);
+            IActionResult result = testController.Transfer(1, "123", 100, "sample");
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
     }
 }
