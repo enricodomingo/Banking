@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Banking.Facade;
 using Banking.ViewModels;
+using System.Threading.Tasks;
 
 namespace Banking.Controllers
 {
@@ -12,7 +13,7 @@ namespace Banking.Controllers
         {
             _Itransaction = Itransaction;
         }
-        public ViewResult Transactions(string accountNumber, int Id)
+        public async Task<ViewResult> Transactions(string accountNumber, int Id)
         {
             TransactionViewModel transaction = new TransactionViewModel();
             transaction.Transactions = _Itransaction.GetTransactionsByAccountNumber(accountNumber);

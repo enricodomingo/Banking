@@ -4,6 +4,7 @@ using Banking.Models;
 using Banking.Facade;
 using Banking.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace Banking.Controllers
 {
@@ -17,7 +18,7 @@ namespace Banking.Controllers
             _Iaccount = Iaccount;
         }
 
-        public ViewResult Accounts()
+        public async Task<ViewResult> Accounts()
         {
             AccountViewModel accountsViewModel = new AccountViewModel();
             accountsViewModel.Accounts = _Iaccount.Accounts;
@@ -25,14 +26,14 @@ namespace Banking.Controllers
             return View(accountsViewModel);
         }
 
-        public ViewResult Deposit(int id)
+        public async Task<ViewResult> Deposit(int id)
         {
             var _account = _Iaccount.GetAccountById(id);
             return View(_account);
         }
 
         [HttpPost]
-        public IActionResult Deposit(Account account, int id, decimal amount, string password)
+        public async Task<IActionResult> Deposit(Account account, int id, decimal amount, string password)
         {
             var _account = _Iaccount.GetAccountById(id);
             if (_account.Password != password)
@@ -59,7 +60,7 @@ namespace Banking.Controllers
             return View(_account);
         }
 
-        public ViewResult Transfer(int id)
+        public async Task<ViewResult> Transfer(int id)
         {
             TransferViewModel transferViewModel = new TransferViewModel();
             transferViewModel.Account = _Iaccount.GetAccountById(id);
@@ -67,7 +68,7 @@ namespace Banking.Controllers
         }
 
         [HttpPost]
-        public IActionResult Transfer(int id, string transferAccount, decimal amount, string password)
+        public async Task<IActionResult> Transfer(int id, string transferAccount, decimal amount, string password)
         {
             var _account = _Iaccount.GetAccountById(id);
             var _transferTo = _Iaccount.GetAccountByAccountNumber(transferAccount);
@@ -103,14 +104,14 @@ namespace Banking.Controllers
             return View(transferViewModel);
         }
 
-        public ViewResult Withdraw(int id)
+        public async Task<ViewResult> Withdraw(int id)
         {
             var account = _Iaccount.GetAccountById(id);
             return View(account);
         }
 
         [HttpPost]
-        public IActionResult Withdraw(int id, decimal amount, string password)
+        public async Task<IActionResult> Withdraw(int id, decimal amount, string password)
         {
             var _account = _Iaccount.GetAccountById(id);
             if (_account.Password != password)
@@ -137,13 +138,13 @@ namespace Banking.Controllers
             return View(_account);
         }
 
-        public IActionResult NewAccount()
+        public async Task<IActionResult> NewAccount()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult NewAccount(Account account)
+        public async Task<IActionResult> NewAccount(Account account)
         {
             if (ModelState.IsValid)
             {
@@ -153,6 +154,6 @@ namespace Banking.Controllers
             return View();
         }
 
-       
+
     }
 }
