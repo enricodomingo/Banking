@@ -21,7 +21,7 @@ namespace Banking.Controllers
         public async Task<ViewResult> Accounts()
         {
             AccountViewModel accountsViewModel = new AccountViewModel();
-            accountsViewModel.Accounts = _Iaccount.Accounts;
+            accountsViewModel.Accounts = await _Iaccount.Accounts;
 
             return View(accountsViewModel);
         }

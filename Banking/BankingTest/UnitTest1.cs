@@ -5,6 +5,7 @@ using Banking.Facade;
 using Banking.Controllers;
 using Banking.Models;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace BankingTest
 {
@@ -35,106 +36,91 @@ namespace BankingTest
             Assert.IsTrue(string.IsNullOrEmpty(getTransactions.ViewName) || getTransactions.ViewName == "Transactions");
         }
 
-        [TestMethod]
-        public async Task TestForDeposit()
+        public List<Account> SetAccount()
         {
-            Mock<IAccount> mock = new Mock<IAccount>();
-            var testController = new AccountController(mock.Object);
-            Account _account = new Account()
+            var _account = new List<Account>();
+            _account.Add(new Account
             {
                 AccountName = "sample",
                 Id = 1,
                 AccountNumber = "123",
                 Password = "sample"
-            };
+            });
+            _account.Add(new Account
+            {
+                AccountName = "samples",
+                Id = 2,
+                AccountNumber = "1234",
+                Password = "samples"
+            });
+            _account.Add(new Account
+            {
+                AccountName = "sampless",
+                Id = 3,
+                AccountNumber = "12345",
+                Password = "sampless"
+            });
+            return _account;
+        }
 
-            mock.Setup(s => s.GetAccountById(1)).Returns(_account);
-            IActionResult result = await testController.Deposit(_account, 1, 100, "sample");
-            Assert.IsInstanceOfType(result, typeof(RedirectToActionResult));
+        [TestMethod]
+        public async Task TestForDeposit()
+        {
+            var test = SetAccount();
+            Mock<IAccount> mock = new Mock<IAccount>();
+            var testController = new AccountController(mock.Object);
+
+            foreach(var account in test)
+            {
+                mock.Setup(s => s.GetAccountById(account.Id)).Returns(account);
+                IActionResult result = await testController.Deposit(account, account.Id, 100, account.Password);
+                Assert.IsInstanceOfType(result, typeof(RedirectToActionResult));
+            }
+
         }
 
         [TestMethod]
         public async Task TestforNewAccount()
         {
+            var test = SetAccount();
             Mock<IAccount> mock = new Mock<IAccount>();
             var testController = new AccountController(mock.Object);
-            Account _account = new Account()
+            foreach (var account in test)
             {
-                AccountName = "sample",
-                Id = 1,
-                AccountNumber = "123",
-                Password = "sample"
-            };
-            mock.Setup(s => s.GetAccountById(1)).Returns(_account);
-            IActionResult result = await testController.NewAccount(_account);
-            Assert.IsInstanceOfType(result, typeof(RedirectToActionResult));
+                mock.Setup(s => s.GetAccountById(account.Id)).Returns(account);
+                IActionResult result = await testController.NewAccount(account);
+                Assert.IsInstanceOfType(result, typeof(RedirectToActionResult));
+            }
         }
 
         [TestMethod]
         public async Task TestForWithdraw()
         {
+            var test = SetAccount();
             Mock<IAccount> mock = new Mock<IAccount>();
             var testController = new AccountController(mock.Object);
-            Account _account = new Account()
+            foreach (var account in test)
             {
-                AccountName = "sample",
-                Id = 1,
-                AccountNumber = "123",
-                Password = "sample"
-            };
-            mock.Setup(s => s.GetAccountById(1)).Returns(_account);
-            IActionResult result = await testController.Withdraw(1, 100, "sample");
-            Assert.IsInstanceOfType(result, typeof(ViewResult));
+                mock.Setup(s => s.GetAccountById(account.Id)).Returns(account);
+                IActionResult result = await testController.Withdraw(account.Id, 100, account.Password);
+                Assert.IsInstanceOfType(result, typeof(ViewResult));
+            }
         }
 
         [TestMethod]
         public async Task TestForTransfer()
         {
+            var test = SetAccount();
             Mock<IAccount> mock = new Mock<IAccount>();
             mock.As<IAccount>();
             var testController = new AccountController(mock.Object);
-            Account _account = new Account()
+            foreach (var account in test)
             {
-                AccountName = "sample",
-                Id = 1,
-                AccountNumber = "123",
-                Password = "sample"
-            };
-            mock.Setup(s => s.GetAccountById(1)).Returns(_account);
-            IActionResult result = await testController.Transfer(1, "123", 100, "sample");
-            Assert.IsInstanceOfType(result, typeof(ViewResult));
-        }
-
-        [TestMethod]
-        public async Task TestForConcurrentTransfer()
-        {
-            await TestForTransfer();
-        }
-
-        [TestMethod]
-        public async Task TestForConcurrentDeposit()
-        {
-            await TestForDeposit();
-        }
-
-        public async Task TestForConcurrentWithdraw()
-        {
-            await TestForWithdraw();
-        }
-
-        public async Task TestForConcurrentNewAccount()
-        {
-            await TestforNewAccount();
-        }
-
-        public async Task TestForConcurrentAccounts()
-        {
-            await TestForAccounts();
-        }
-
-        public async Task TestForConcurrentTransactions()
-        {
-            await TestForTransactions();
+                mock.Setup(s => s.GetAccountById(account.Id)).Returns(account);
+                IActionResult result = await testController.Transfer(account.Id, account.AccountNumber, 100, account.Password);
+                Assert.IsInstanceOfType(result, typeof(ViewResult));
+            }
+                
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Banking.Facade
     {
         Account GetAccountById(int accountId);
         Account GetAccountByAccountNumber(string accountNumber);
-        IEnumerable<Account> Accounts { get; }
+        Task<IEnumerable<Account>> Accounts { get; }
         void NewAccount(Account account);
         void Deposit(int id, decimal amount);
         void Withdraw(int id, decimal amount);
@@ -39,9 +39,12 @@ namespace Banking.Facade
             return _dbContext.Accounts.FirstOrDefault(a => a.Id == accountId);
         }
 
-        public IEnumerable<Account> Accounts
+        public Task<IEnumerable<Account>> Accounts
         {
-            get { return _dbContext.Accounts; }
+            get {
+                var assets = Task.Factory.StartNew(() => (IEnumerable<Account>)_dbContext.Accounts);
+                return assets;
+            }
         }
 
         public void NewAccount(Account account)
